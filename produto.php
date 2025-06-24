@@ -32,16 +32,18 @@ $conexao->close();
             <th>Editar</th>
             <th>Apagar</th>
         </tr>
-        <?php while($linha = $resultado->fetch_assoc()):?>
+        <?php 
+        $resultado = $pdo->query("SELECT * FROM produto");
+        while($linha = $resultado->fetch(PDO::FETCH_ASSOC)):?>
         <tr>
-            <td><?php echo $linha['id'] ?></td>
-            <td><?php echo $linha['nome'] ?></td>
-            <td><?php echo "R$ " . $linha ['preco'] ?></td>
-            <td>Editar</td>
-            <td><form action="" method="POST">
-                <button type="submit" name="btnApagar" value="<?php echo $linha['id'] ?>">Apagar</button>
-                </form>
-            </td>
+        <td><?php echo $linha['id'] ?></td>
+        <td><?php echo $linha['nome'] ?></td>
+        <td><?php echo "R$ " . $linha ['preco'] ?></td>
+        <td>Editar</td>
+         <td><form action="" method="POST">
+         <button type="submit" name="btnApagar" value="<?php echo $linha['id'] ?>">Apagar</button>
+         </form>
+         </td>
         </tr>
         <?php endwhile; ?>
     </table>
