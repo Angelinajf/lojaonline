@@ -6,10 +6,6 @@ if(isset($_POST['btnApagar'])){
     $sql = "DELETE FROM Produto WHERE id = $id";
     $result = $conexao->query($sql);
 }
-
-$sql = "SELECT * FROM Produto";
-$resultado = $conexao->query($sql);
-$conexao->close();
 ?>
 
 
