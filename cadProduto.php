@@ -5,13 +5,10 @@ if (isset($_POST['btnSalvar'])) {
     $nome = $_POST['txtNome'];
     $preco = $_POST['txtPreco'];
 
-    $resultado = $pdo->prepare
-    ("INSERT INTO Produto(nome, preco, categoria) VALUES(?, ?, ?)";
-    $resultado->execute('$nome, $preco, 'Informatica)
+    $resultado = $pdo->prepare("INSERT INTO Produto(nome, preco, categoria) VALUES(?, ?, ?)");
+    $resultado->execute([$nome, $preco, 'Informatica']);
 
-    $resultado = $conexao->query($sql);
     header("Location: produto.php");
-    $conexao->close();
 }
 ?>
 
