@@ -37,10 +37,15 @@ if(isset($_POST['btnApagar'])){
         <td><?php echo "R$ " . $linha ['preco'] ?></td>
         <td>Editar</td>
          <td>
-        <form action="excluir.php" method="POST">
-        <button type="submit" name="btnApagar" value="<?php echo $linha['id'] ?>">Apagar</button>
+        <form action="editar.php" method="POST">
+        <button type="submit" name="btneditar" value="<?php echo $linha['id'] ?>">editar</button>
          </form>
          </td>
+         <td>
+        <form action="excluir.php" method="POST">
+        <button type="submit" name="btnApagar" value="<?php echo $linha['id'] ?>">apagar</button>
+        <form>
+        </td>
         </tr>
         <?php endwhile; ?>
     </table>
